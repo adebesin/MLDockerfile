@@ -6,7 +6,7 @@ RUN apt-get -y update
 RUN apt-get -y upgrade
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install build-essential git wget\
     pkg-config zlib1g-dev curl libbz2-dev libreadline-dev libssl-dev libsqlite3-dev\
-    sudo vim zsh
+    sudo vim zsh libcupti-dev
 
 # # Install java
 RUN echo "\n\nInstals Java\n\n"
