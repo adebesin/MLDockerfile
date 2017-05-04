@@ -18,7 +18,7 @@ RUN echo debconf shared/accepted-oracle-license-v1-1 seen true |  debconf-set-se
 RUN apt-get -y install -y oracle-java8-installer
 #
 # # Install bazel
-RUN echo "\n\nInstall bazel\n\n"
+RUN echo "\nInstall bazel"
 RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" |  tee /etc/apt/sources.list.d/bazel.list
 RUN curl https://storage.googleapis.com/bazel-apt/doc/apt-key.pub.gpg |  apt-key add -
 RUN apt-get -y update
@@ -26,10 +26,9 @@ RUN apt-get -y install bazel
 RUN apt-get -y upgrade bazel
 
 # Install pyenv
-RUN echo "\n\nInstall pyenv\n\n"
+RUN echo "\nInstall pyenv"
 WORKDIR /usr/local
 RUN git clone git://github.com/yyuu/pyenv.git ./pyenv
-RUN echo "\n\n\n" && ls ./pyenv/plugins && echo "\n\n\n"
 RUN mkdir -p ./pyenv/versions ./pyenv/shims
 WORKDIR /usr/local/pyenv/plugins
 RUN git clone git://github.com/yyuu/pyenv-virtualenv.git
