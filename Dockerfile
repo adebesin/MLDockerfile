@@ -46,8 +46,8 @@ RUN sed -i 's/^Defaults\ssecure_path=".*"/#&\nDefaults\tenv_keep += "PATH"\nDefa
 
 # Create user
 RUN useradd -m user
-RUN echo "root:5429914598" | chpasswd
-RUN echo "user:5429914598" | chpasswd
+RUN echo "root:123456" | chpasswd
+RUN echo "user:123456" | chpasswd
 RUN adduser user sudo
 # Working directory
 WORKDIR /home/user
